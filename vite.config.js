@@ -2,6 +2,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+    base: '/Optudy-web/',
     build: {
         rollupOptions: {
             input: {
