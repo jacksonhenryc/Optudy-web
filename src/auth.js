@@ -31,11 +31,11 @@ export async function signIn(email, password) {
  */
 export async function signOut() {
     if (!isSupabaseConfigured()) {
-        window.location.href = '/login.html'
+        window.location.href = import.meta.env.BASE_URL + 'login.html'
         return
     }
     await supabase.auth.signOut()
-    window.location.href = '/login.html'
+    window.location.href = import.meta.env.BASE_URL + 'login.html'
 }
 
 /**
@@ -62,7 +62,7 @@ export async function getUser() {
 export async function redirectIfLoggedIn() {
     const session = await getSession()
     if (session) {
-        window.location.href = '/index.html'
+        window.location.href = import.meta.env.BASE_URL
     }
 }
 
@@ -74,7 +74,7 @@ export async function requireAuth() {
     if (!isSupabaseConfigured()) return null // Allow access without auth if not configured
     const session = await getSession()
     if (!session) {
-        window.location.href = '/login.html'
+        window.location.href = import.meta.env.BASE_URL + 'login.html'
         return null
     }
     return session.user

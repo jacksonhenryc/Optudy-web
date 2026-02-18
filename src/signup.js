@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Auto redirect after 3 seconds
         setTimeout(() => {
-            window.location.href = '/login.html'
+            window.location.href = import.meta.env.BASE_URL + 'login.html'
         }, 3000)
     })
 })

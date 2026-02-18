@@ -29,6 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Success — redirect to dashboard
-        window.location.href = '/index.html'
+        window.location.href = import.meta.env.BASE_URL
     })
 })
